@@ -1,0 +1,12 @@
+{
+  "name": "Micro-Focus",
+  "version": "1.0.0",
+  "description": "A high-concentration timer app designed to eliminate anxiety by forcing focus on the present 5-60 minutes.",
+  "author": "VOCAL LOGIC HELPER",
+  "category": "Productivity",
+  "requestFramePermissions": [],
+  "entryPoint": "index.html",
+  "icon": "",
+  "screenshots": [],
+  "minAppintosVersion": "1.0.0"
+}

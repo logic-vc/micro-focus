@@ -1,6 +1,26 @@
-# Micro-Focus 앱인토스 배포 가이드
+# Micro-Focus 배포 가이드
 
-## 📦 배포 파일
+## 🌐 GitHub Pages 배포
+
+### 자동 배포 설정 완료 ✅
+
+이 프로젝트는 GitHub Actions를 통해 자동으로 배포됩니다.
+
+#### 설정 방법:
+1. GitHub 저장소 → **Settings** → **Pages**
+2. **Source**를 **GitHub Actions**로 선택
+3. `main` 또는 `master` 브랜치에 푸시하면 자동 배포됨
+
+#### 배포 URL:
+```
+https://logic-vc.github.io/micro-focus/
+```
+
+**중요**: Vite 설정에 `base: './'`가 추가되어 GitHub Pages에서 정상 작동합니다!
+
+---
+
+## 📦 앱인토스(Appintos) 배포 파일
 
 - **micro-focus.ait.tar.gz** - 앱인토스에 업로드할 AIT 패키지 파일 (64KB)
 

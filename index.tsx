@@ -1,16 +1,34 @@
 
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 
-const rootElement = document.getElementById('root');
-if (!rootElement) {
-  throw new Error("Could not find root element to mount to");
-}
+const mountApp = () => {
+  const rootElement = document.getElementById('root');
+  if (!rootElement) {
+    console.error("Failed to find the root element");
+    return;
+  }
 
-const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+  try {
+    const root = createRoot(rootElement);
+    root.render(
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    );
+  } catch (error) {
+    console.error("Focus Engine ignition failed:", error);
+    rootElement.innerHTML = `<div style="color: #ef4444; font-family: monospace; padding: 20px; text-align: center;">
+      Critical Error: Failed to start the engine.<br/>
+      Check console for details.
+    </div>`;
+  }
+};
+
+// Ensure DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', mountApp);
+} else {
+  mountApp();
+}

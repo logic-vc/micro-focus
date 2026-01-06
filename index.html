@@ -12,7 +12,7 @@
     <style>
       body {
         font-family: 'Outfit', sans-serif;
-        background-color: #1a1a1a; /* Deep Dark Gray Base */
+        background-color: #1a1a1a;
         color: #e2e8f0;
         margin: 0;
         overflow-x: hidden;
@@ -33,7 +33,6 @@
         background: #3b82f6;
         color: white;
       }
-      /* Hide arrows on number inputs */
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
         -webkit-appearance: none;
@@ -42,7 +41,6 @@
       input[type=number] {
         -moz-appearance: textfield;
       }
-      /* Custom Scrollbar */
       .no-scrollbar::-webkit-scrollbar {
         display: none;
       }
@@ -51,23 +49,27 @@
         scrollbar-width: none;
       }
     </style>
-    <script type="importmap">
+  <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@19.0.0",
-    "react-dom": "https://esm.sh/react-dom@19.0.0",
-    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/"
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
-    <!-- 메인 로직을 실행할 모듈 스크립트 추가 -->
-    <script type="module" src="./index.tsx"></script>
-  </head>
+</head>
   <body>
-    <div id="root" class="min-h-screen flex items-center justify-center bg-[#1a1a1a] text-[#666] text-xs uppercase tracking-widest font-light">
-      Initializing Focus Engine...
+    <div id="root">
+      <div class="min-h-screen flex items-center justify-center bg-[#1a1a1a] text-[#666] text-xs uppercase tracking-widest font-light">
+        <div class="flex flex-col items-center gap-4">
+          <div class="w-5 h-5 border-2 border-blue-500/30 border-t-blue-500 rounded-full animate-spin"></div>
+          Initializing Focus Engine...
+        </div>
+      </div>
     </div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Task } from '../types.ts';
+import { Task } from '../types';
 
 interface FocusViewProps {
   tasks: Task[];

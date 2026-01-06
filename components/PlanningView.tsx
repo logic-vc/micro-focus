@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Task } from '../types.ts';
+import { Task } from '../types';
 
 interface PlanningViewProps {
   tasks: Task[];

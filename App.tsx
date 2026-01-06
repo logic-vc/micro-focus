@@ -1,8 +1,8 @@
 
 import React, { useState, useCallback } from 'react';
-import { PlanningView } from './components/PlanningView.tsx';
-import { FocusView } from './components/FocusView.tsx';
-import { Task, AppMode } from './types.ts';
+import { PlanningView } from './components/PlanningView';
+import { FocusView } from './components/FocusView';
+import { Task, AppMode } from './types';
 
 const generateId = () => {
   if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {

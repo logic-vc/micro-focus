@@ -1,8 +1,15 @@
 
 import React, { useState, useCallback } from 'react';
-import { PlanningView } from './components/PlanningView';
-import { FocusView } from './components/FocusView';
-import { Task, AppMode } from './types';
+import { PlanningView } from './components/PlanningView.tsx';
+import { FocusView } from './components/FocusView.tsx';
+import { Task, AppMode } from './types.ts';
+
+const generateId = () => {
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+    return crypto.randomUUID();
+  }
+  return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+};
 
 const App: React.FC = () => {
   const [mode, setMode] = useState<AppMode>(AppMode.PLANNING);
@@ -11,7 +18,7 @@ const App: React.FC = () => {
 
   const addTask = (title: string, durationMinutes: number) => {
     const newTask: Task = {
-      id: crypto.randomUUID(),
+      id: generateId(),
       title,
       durationMinutes,
     };
